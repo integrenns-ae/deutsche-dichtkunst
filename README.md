@@ -57,3 +57,9 @@ Der Skill destilliert eine fünfteilige Dichtschule (Der Vers · Der Reim · Die
 ## Lizenz
 
 MIT – siehe [LICENSE](LICENSE).
+
+---
+
+## English summary
+
+**deutsche-dichtkunst** is a Claude Skill for classical German poetry — strict in the discipline of the craft, beautiful in form. It teaches Claude to write, revise and analyze German poems with clean meter, verified stress patterns (scansion), pure rhymes, matching cadences and rhetorical devices. Includes a syllable-counting script and a mandatory quality-control loop, so poems don't just rhyme — they scan. Rooted in the tradition of German hymns and psalm paraphrases; works for secular occasions too (birthdays, weddings, anniversaries). Install via Claude Code plugin marketplace (see above). Keywords: German poetry, Gedichte, Lyrik, rhyme, meter, scansion, cadence, hymn writing.
