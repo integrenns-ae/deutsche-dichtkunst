@@ -1,26 +1,57 @@
 # Deutsche Dichtkunst
 
-**Ein Claude-Skill für klassische deutsche Dichtkunst – streng in der Disziplin des Dichtens, schön in Form.**
+**Persönliche deutsche Gedichte schreiben und überarbeiten – mit Prüfung von Versmaß, Reimen und Silben.**
 
-Dieser Skill lehrt Claude das Handwerk der klassischen deutschen Dichtung. Sein Kernsatz: **Ein Text, der sich nur reimt, ist noch kein Gedicht.** Ein Gedicht ist erst fertig, wenn Versmaß, Betonungen, Reime und Kadenzen stimmen. Die meisten KI-Gedichte scheitern genau daran – sie reimen, aber sie holpern. Dieser Skill nicht: Er enthält eine Arbeitsmethode mit eingebauter Kontrollschleife, die jedes Gedicht prüft, bevor es abgegeben wird.
+Für Weihnachtskarten, Advent, Geburtstage, Hochzeiten und andere Anlässe. Der Skill arbeitet mit einer Drei-Spalten-Methode (WORT – REIM – VERBINDUNG), einer Kontrollschleife und Nachschlagewerken. Er unterstützt klassische, formgebundene Gedichte und ihre Analyse.
 
-## Was der Skill kann
+## Ein Weihnachtsgedicht aus drei Erinnerungen
 
-- **Gedichte schreiben** nach der klassischen Drei-Spalten-Methode (WORT – REIM – VERBINDUNG): Gelegenheitsgedichte zu Geburtstag, Hochzeit, Jubiläum, geistlichen Anlässen; Gedichte aus Quelltexten (Predigt, Lebenslauf, Bibeltext, Rede); Gedichte mit Pflichtwörtern
-- **Gedichte überarbeiten**: Strophen ergänzen, umdichten, holpernde Verse glätten
-- **Gedichte analysieren**: Versfuß, Kadenzen, Reimschema (Kompaktnotation wie `A11w`), Stilmittel – jeder Befund am Text belegt
+> „Schreibe ein Weihnachtsgedicht für meine Eltern. Darin sollen der Apfelbaum, die Werkbank und euer selbst gebackenes Sonntagsbrot vorkommen. Weltlich, persönlich, zwei Vierzeiler.“
 
-## Was ihn streng macht
+```text
+Der Apfelbaum steht weiß im Schnee,
+ich denk an euch, wohin ich geh.
+Die Werkbank ruht; das Licht bleibt an,
+weil ich bei euch noch Kind sein kann.
 
-- **Reime in zwei Stufen**: Standard ist der reine Reim (absoluter Gleichklang ab der letzten betonten Silbe). Zulässig daneben nur der zweisilbige unreine Reim unter engen phonetischen Bedingungen – und der wird bei der Abgabe ausdrücklich gekennzeichnet. Männliche Reime müssen immer rein sein. *offen* reimt nicht auf *Ofen*, *Herr* nicht auf *Heer*.
-- **Silbenzählung per Skript** (`scripts/silben.py`): zählt gesprochene Silben, ist ehrlich bei Unsicherheit und unterstützt ein eigenes Korrekturlexikon.
-- **Betonungen werden skandiert**, Silbe für Silbe – gleiche Silbenzahl allein genügt nicht. Betonungsfehler dürfen nie stehen bleiben.
-- **Kadenzen** (männlich/weiblich) werden geprüft; sich reimende Verse brauchen dieselbe Kadenz.
-- **Erst das Handwerk, dann der Schmuck**: Stilmittel (Metapher, Personifikation, Anapher, Alliteration …) verzieren ein handwerklich fertiges Gedicht, sie ersetzen es nicht.
+Das Sonntagsbrot, von euch gemacht,
+hat Wärme in mein Herz gebracht.
+Zum Fest komm ich zu euch nach Haus
+und pack die alten Träume aus.
+```
 
-Die Tradition hinter dem Skill ist das geistliche Lied (Kirchenlieder, Psalmnachdichtungen); er bevorzugt eine gehobene, würdige Sprache, folgt aber selbstverständlich auch weltlichen, humorvollen oder kindlichen Aufträgen – mit denselben handwerklichen Regeln.
+Vorbereitete, redaktionell bearbeitete Demonstration; kein Vergleichstest. [Drei vollständige Beispiele mit Aufträgen und Formhinweisen](examples/WEIHNACHTEN.md).
 
-## Installation
+## Was der Skill unterstützt
+
+- Gedichte aus persönlichen Erinnerungen, Pflichtwörtern oder Quelltexten entwerfen.
+- Holpernde Verse überarbeiten, Strophen ergänzen und bestehende Texte umdichten.
+- Versmaß, Betonungen, Reime, Kadenzen und Stilmittel eines Gedichts untersuchen.
+- Ton und Anlass berücksichtigen: weltlich, humorvoll, feierlich oder christlich.
+
+Die Methode wurzelt in der Tradition geistlicher Lieder und Psalmnachdichtungen. Religiöse Motive folgen dem Auftrag; weltliche Aufträge bleiben weltlich.
+
+## So wird geprüft
+
+Ein Python-Skript schätzt die gesprochenen Silben und kennzeichnet manche Unsicherheiten. Reime, natürliche Betonungen und Kadenzen werden zusätzlich sprachlich geprüft. Gleiche Silbenzahl allein ist noch kein passendes Versmaß.
+
+**Grenzen:** Das Skript ist heuristisch; Modellurteile können falsch sein. Bei Eigennamen, Fremdwörtern und Aussprachevarianten ist besondere Aufmerksamkeit nötig. Lies ein Gedicht vor seiner Verwendung laut vor. Wenn die Umgebung keine Python-Ausführung erlaubt, kennzeichnet der Skill seine Silbenprüfung ausdrücklich als manuell.
+
+## Nutzung
+
+### ChatGPT und Codex
+
+Das Repository enthält ein OpenAI-Paket zur Einreichung. **Es gibt noch keinen veröffentlichten Eintrag im OpenAI-Plugin-Verzeichnis und keinen bestätigten ChatGPT-Installationslink.**
+
+Paket lokal bauen:
+
+```bash
+python3 scripts/package_openai.py
+```
+
+Das ZIP entsteht unter `../output/deutsche-dichtkunst-1.1.0-openai.zip`. [Einreichungsanleitung und offene Schritte](docs/START.md).
+
+Für einen lokalen Codex-Test kann der vollständige Ordner `skills/deutsche-dichtkunst/` in einen von Codex erkannten Skill-Ordner kopiert werden, etwa `~/.agents/skills/deutsche-dichtkunst/`. Anschließend eine neue Sitzung starten und den Skill ausdrücklich mit `$deutsche-dichtkunst` aufrufen. Eine solche lokale Installation veröffentlicht kein Plugin.
 
 ### Claude Code
 
@@ -29,37 +60,33 @@ claude plugin marketplace add integrenns-ae/deutsche-dichtkunst
 claude plugin install deutsche-dichtkunst@integrenns
 ```
 
-Oder in einer Sitzung: `/plugin install deutsche-dichtkunst --marketplace integrenns-ae/deutsche-dichtkunst`
+Alternativ das Repository klonen und mit `claude --plugin-dir ./deutsche-dichtkunst` laden oder den vollständigen Skill-Ordner nach `~/.claude/skills/` kopieren.
 
-Danach greift der Skill automatisch, sobald ein Gedicht, Verse, Reime oder eine Gedichtanalyse auf Deutsch gewünscht werden.
+## Silbenzähler separat verwenden
 
-### Ohne Marketplace
+Python ab Version 3.10 reicht aus; es sind keine zusätzlichen Pakete erforderlich. `pyphen` ist ausschließlich eine optionale Hilfe zur Anzeige orthografischer Trennstellen.
 
-Repo klonen und mit `claude --plugin-dir ./deutsche-dichtkunst` laden, oder den Ordner `skills/deutsche-dichtkunst/` nach `~/.claude/skills/` kopieren.
-
-## Aufbau
-
-```
-skills/deutsche-dichtkunst/
-├── SKILL.md                  # Methode, Reimregeln, Kontrollschleife, Analyse-Leitfaden
-├── references/
-│   ├── metrik.md             # Versfüße, Kadenzen, Zäsur, Auftakt
-│   ├── reime.md              # Reinheit, Vokallänge, alle Reimschemata
-│   └── stilmittel.md         # 13 Stilmittel mit Beispielen
-└── scripts/
-    └── silben.py             # Silbenzähler mit Korrekturlexikon
+```bash
+python3 skills/deutsche-dichtkunst/scripts/silben.py --self-test
+python3 skills/deutsche-dichtkunst/scripts/silben.py --target 8 --file examples/eltern.txt
 ```
 
-## Hintergrund
+Für besondere Aussprachen unterstützt `--lexikon ausnahmen.txt` Einträge wie `Queue=1`. Das Skript überprüft weder Wortbetonungen noch Reimqualität.
 
-Der Skill destilliert eine fünfteilige Dichtschule (Der Vers · Der Reim · Die Stilmittel · Die Sprache · Die Methode) und einen Seminarvortrag über die Werkzeuge eines Dichters in eine Arbeitsanweisung, mit der Claude formstrenge und klangschöne deutsche Gedichte schreibt und prüft.
+## Qualität und Feedback
 
-## Lizenz
+[Prüfprotokoll](docs/VALIDIERUNG.md) · [Zehn Aufträge für einen Vergleich mit und ohne Skill](evals/README.md)
+
+Konkrete Rückmeldungen helfen: Welche Zeile holpert? Welcher Reim klingt unrein? Welcher persönliche Inhalt ging verloren? Bitte nutze [GitHub Issues](https://github.com/integrenns-ae/deutsche-dichtkunst/issues) mit anonymisierten Beispielen.
+
+## Daten und Lizenz
+
+Das Paket enthält keinen eigenen Server und keine Telemetrie. Der Plugin-Code sendet keine Eingaben an den Herausgeber. Chats und Dateien unterliegen den Bedingungen und Einstellungen der jeweils verwendeten KI-Plattform. [Datenverarbeitung](PRIVACY.md).
 
 MIT – siehe [LICENSE](LICENSE).
 
----
-
 ## English summary
 
-**deutsche-dichtkunst** is a Claude Skill for classical German poetry — strict in the discipline of the craft, beautiful in form. It teaches Claude to write, revise and analyze German poems with clean meter, verified stress patterns (scansion), pure rhymes, matching cadences and rhetorical devices. Includes a syllable-counting script and a mandatory quality-control loop, so poems don't just rhyme — they scan. Rooted in the tradition of German hymns and psalm paraphrases; works for secular occasions too (birthdays, weddings, anniversaries). Install via Claude Code plugin marketplace (see above). Keywords: German poetry, Gedichte, Lyrik, rhyme, meter, scansion, cadence, hymn writing.
+Deutsche Dichtkunst is an open skill for writing, revising and analyzing classical German poetry. It combines a structured drafting method with checks for meter, stress, rhyme and cadence, plus a heuristic Python syllable estimator. It supports personal Christmas poems, Advent, birthdays and other occasions.
+
+The repository includes Claude packaging and a prepared OpenAI plugin manifest. Publication in the OpenAI directory and an end-to-end ChatGPT installation test are still pending. The examples are edited demonstrations, not benchmark results. The skill reports manual syllable checking when code execution is unavailable.

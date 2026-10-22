@@ -1,0 +1,45 @@
+{
+  "name": "deutsche-dichtkunst",
+  "version": "1.1.0",
+  "description": "Write, revise and analyze classical German poems with a structured check of meter, rhyme, cadence and syllables. Includes a Python syllable estimator and German reference material.",
+  "author": {
+    "name": "Alex (integrenns.de)",
+    "email": "integrenns@gmail.com"
+  },
+  "homepage": "https://github.com/integrenns-ae/deutsche-dichtkunst",
+  "repository": "https://github.com/integrenns-ae/deutsche-dichtkunst",
+  "license": "MIT",
+  "keywords": [
+    "german",
+    "poetry",
+    "gedichte",
+    "weihnachten",
+    "advent",
+    "reime",
+    "versmass",
+    "lyrik"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Deutsche Dichtkunst",
+    "shortDescription": "German poems, rhythm & rhyme",
+    "longDescription": "Write personal German poems for Christmas cards, Advent, birthdays, weddings and other occasions. Revise uneven lines or analyze meter, rhyme and cadence. Choose a secular, humorous or Christian tone to match the occasion. The skill uses a structured drafting and revision method plus German reference material. A bundled Python script estimates syllable counts when code execution is available. Otherwise the skill explains that its syllable check was manual. Stress and rhyme are assessed by the model; results can contain errors and should be read aloud before use.",
+    "developerName": "Alex (integrenns.de)",
+    "category": "Productivity",
+    "capabilities": [
+      "Write German poems",
+      "Revise verse",
+      "Analyze meter and rhyme"
+    ],
+    "websiteURL": "https://github.com/integrenns-ae/deutsche-dichtkunst",
+    "privacyPolicyURL": "https://github.com/integrenns-ae/deutsche-dichtkunst/blob/codex/openai-launch/PRIVACY.md",
+    "defaultPrompt": [
+      "Schreibe ein Weihnachtsgedicht für meine Eltern aus drei Erinnerungen.",
+      "Überarbeite meinen Weihnachtsgruß, damit er flüssiger klingt.",
+      "Schreibe ein christliches Adventsgedicht für unseren Gemeindebrief."
+    ],
+    "brandColor": "#1B222D",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}
