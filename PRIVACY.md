@@ -2,7 +2,9 @@
 
 Stand: 22. Oktober 2026 · Paketversion 1.1.0
 
-Herausgeber dieses Open-Source-Pakets: Alex (integrenns.de), GitHub-Profil [integrenns-ae](https://github.com/integrenns-ae). Kontakt: integrenns@gmail.com.
+Herausgeber dieses Open-Source-Pakets: Alexander Enns, Am Heiligenstock 18, 35305 Grünberg, Deutschland. GitHub-Profil [integrenns-ae](https://github.com/integrenns-ae). Kontakt: alexander.enns@integrenns.de.
+
+**Maßgeblich ist die veröffentlichte Fassung unter [https://integrenns.de/dichtkunst/datenschutz](https://integrenns.de/dichtkunst/datenschutz).** Diese Datei hier ist die Fassung im Quellpaket; weicht sie ab, gilt die veröffentlichte.
 
 ## Umfang
 
