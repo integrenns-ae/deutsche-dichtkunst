@@ -1,0 +1,15 @@
+{
+  "name": "integrenns",
+  "description": "Skills von integrenns.de – u. a. klassische deutsche Dichtkunst",
+  "owner": {
+    "name": "Alex (integrenns.de)",
+    "email": "integrenns@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "deutsche-dichtkunst",
+      "source": "./",
+      "description": "Klassische deutsche Dichtkunst – streng in der Disziplin des Dichtens, schön in Form: Versmaß, Betonungen, reine Reime, Kadenzen, Stilmittel."
+    }
+  ]
+}

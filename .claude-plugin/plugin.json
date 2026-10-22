@@ -1,0 +1,26 @@
+{
+  "name": "deutsche-dichtkunst",
+  "displayName": "Deutsche Dichtkunst",
+  "version": "1.0.0",
+  "description": "Klassische deutsche Dichtkunst: Gedichte schreiben, überarbeiten und analysieren – streng in der Disziplin des Dichtens, schön in Form. Sauberes Versmaß, geprüfte Betonungen, reine Reime, passende Kadenzen und Stilmittel, mit Silbenzähl-Skript und eingebauter Kontrollschleife.",
+  "author": {
+    "name": "Alex (integrenns.de)",
+    "email": "integrenns@gmail.com"
+  },
+  "homepage": "https://github.com/integrenns-ae/deutsche-dichtkunst",
+  "repository": "https://github.com/integrenns-ae/deutsche-dichtkunst",
+  "license": "MIT",
+  "keywords": [
+    "deutsch",
+    "gedicht",
+    "dichtkunst",
+    "lyrik",
+    "reim",
+    "versmass",
+    "metrik",
+    "kadenz",
+    "stilmittel",
+    "german",
+    "poetry"
+  ]
+}
