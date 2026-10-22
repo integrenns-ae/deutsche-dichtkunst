@@ -1,11 +1,12 @@
 {
   "name": "deutsche-dichtkunst",
   "displayName": "Deutsche Dichtkunst",
-  "version": "1.0.0",
-  "description": "Klassische deutsche Dichtkunst: Gedichte schreiben, überarbeiten und analysieren – streng in der Disziplin des Dichtens, schön in Form. Sauberes Versmaß, geprüfte Betonungen, reine Reime, passende Kadenzen und Stilmittel, mit Silbenzähl-Skript und eingebauter Kontrollschleife.",
+  "version": "1.1.0",
+  "description": "Klassische deutsche Gedichte schreiben, überarbeiten und analysieren – mit einer Kontrollschleife für Versmaß, Reime und Silben. Für Weihnachten, Advent und persönliche Anlässe.",
   "author": {
-    "name": "Alex (integrenns.de)",
-    "email": "integrenns@gmail.com"
+    "name": "Alexander Enns",
+    "email": "alexander.enns@integrenns.de",
+    "url": "https://integrenns.de/dichtkunst"
   },
   "homepage": "https://github.com/integrenns-ae/deutsche-dichtkunst",
   "repository": "https://github.com/integrenns-ae/deutsche-dichtkunst",

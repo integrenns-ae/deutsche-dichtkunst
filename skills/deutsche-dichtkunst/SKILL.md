@@ -1,15 +1,15 @@
 ---
 name: "deutsche-dichtkunst"
-description: "Deutsche Gedichte in klassischer Dichtkunst schreiben, überarbeiten und analysieren – streng in der Disziplin des Dichtens, schön in Form: sauberes Versmaß, geprüfte Betonungen, reine Reime, passende Kadenzen und Stilmittel. Diesen Skill IMMER verwenden, wenn ein Gedicht, Verse, Reime, ein Liedtext, eine Strophe oder ein gereimter Text auf Deutsch gewünscht wird – auch bei Gelegenheitsgedichten (Geburtstag, Hochzeit, Jubiläum, geistliche Anlässe), beim Umdichten oder Ergänzen bestehender Strophen, wenn bestimmte Wörter im Gedicht vorkommen müssen, wenn aus einem vorgelegten Text (Predigt, Lebenslauf, Bibeltext, Rede, Bericht) ein Gedicht werden soll und wenn ein Gedicht auf seine Form (Metrum, Reimschema, Kadenzen, Stilmittel) untersucht werden soll."
+description: "Klassische deutsche Gedichte schreiben, überarbeiten und analysieren; mit Versmaß, Reimen, Kadenzen und Silbenprüfung. Für persönliche Anlässe wie Weihnachten, Advent, Geburtstag oder Hochzeit sowie für formbezogene Gedichtanalysen."
 ---
 
 # Deutsche Dichtkunst
 
-Dieser Skill fasst eine fünfteilige Dichtschule zusammen. Ihr Kernsatz: **Ein Text, der sich nur reimt, ist noch kein Gedicht.** Ein Gedicht ist erst fertig, wenn Versmaß, Betonungen, Reime und Kadenzen stimmen. Die meisten KI-Gedichte scheitern genau daran – sie reimen, aber sie holpern. Darum enthält dieser Skill eine Arbeitsmethode mit eingebauter Kontrollschleife. Überspringe die Kontrolle nie, auch nicht bei kurzen Gedichten.
+Dieser Skill fasst eine fünfteilige Dichtschule zusammen. Ihr Kernsatz: **Ein Text, der sich nur reimt, ist noch kein Gedicht.** Ein Gedicht ist erst fertig, wenn Versmaß, Betonungen, Reime und Kadenzen stimmen. Dieser Skill unterstützt formgebundene Dichtung mit einer Arbeitsmethode und einer Kontrollschleife. Die Prüfung hilft, Fehler zu finden, garantiert aber keine fehlerfreien Ergebnisse. Überspringe die Kontrolle nie, auch nicht bei kurzen Gedichten.
 
 ## Ton und Haltung
 
-Bevorzuge eine gehobene, würdige Sprache; die Tradition hinter diesem Skill ist das geistliche Lied (Kirchenlieder, Psalmnachdichtungen). Wenn der Anlass es zulässt, darf das Gedicht diese geistliche Prägung tragen. Wünscht die Person ausdrücklich etwas anderes (weltlich, humorvoll, kindlich), folge selbstverständlich ihrem Wunsch – die handwerklichen Regeln gelten dann genauso.
+Bevorzuge eine gehobene, würdige Sprache; die Tradition hinter diesem Skill ist das geistliche Lied (Kirchenlieder, Psalmnachdichtungen). Leite geistliche Motive aus dem Auftrag oder seinem klaren Kontext ab. Bei weltlichen Aufträgen bleiben die Inhalte weltlich. Folge der gewünschten Tonlage (z. B. persönlich, humorvoll, schlicht oder feierlich); die handwerklichen Regeln gelten dabei genauso. Wenn ausdrücklich freie Verse ohne Reim oder festes Metrum gewünscht sind, respektiere diese Form und wende nur die passenden Hinweise zu Sprache und Bildgestaltung an.
 
 ## Reime in zwei Stufen
 
@@ -71,14 +71,18 @@ Setze aus den Verbindungen die Strophe zusammen. Regeln dabei:
 ### 5. Kontrollschleife (Pflicht!)
 Prüfe jede Strophe in dieser Reihenfolge und korrigiere sofort:
 
-**a) Silben zählen** – nutze das Skript, verlasse dich nicht auf Zählen im Kopf:
+**a) Silben zählen** – nutze bei verfügbarer Python-Ausführung das mitgelieferte Skript (Python >= 3.10; keine zusätzlichen Pakete nötig). Löse `scripts/silben.py` relativ zum Verzeichnis dieser `SKILL.md` auf, nicht zum aktuellen Arbeitsverzeichnis. Die Referenzdateien liegen ebenfalls relativ zu dieser Datei.
+
+Speichere die Verse mit einem Dateischreibwerkzeug als UTF-8-Textdatei im Arbeitsbereich und übergib deren absoluten Pfad an `--file`. Setze freien Nutzertext nicht direkt in einen Shell-Befehl ein. Beispiel mit Pfaden, die durch die tatsächlich ermittelten Pfade ersetzt werden:
+
+```bash
+python3 "/absoluter/pfad/zum/skill/scripts/silben.py" --target 8 --file "/absoluter/pfad/gedicht.txt"
 ```
-python scripts/silben.py --target 8 "Vers eins" "Vers zwei" "Vers drei" "Vers vier"
-python scripts/silben.py -f gedicht.txt          # ganze Datei, Sollwert wird selbst erkannt
-```
+
+Ohne einheitliche Sollzahl lasse `--target` weg. Ist Python oder Dateizugriff in der jeweiligen Oberfläche nicht verfügbar, prüfe die Silben durch explizite Zerlegung und kennzeichne knapp: „Silben manuell geprüft; Skript hier nicht ausgeführt.“ Behaupte niemals, das Skript verwendet zu haben, wenn keine Ausführung stattgefunden hat. Reime und Betonungen brauchen unabhängig vom Skript eine sprachliche Prüfung.
 Das Skript zählt **gesprochene** Silben (Nation=2, Familie=3, Museen=3) und ist ehrlich bei Unsicherheit: `?` heißt "prüfen", ein Bereich wie `3?/2–3` heißt "mehrere Aussprachen möglich", Warnzeilen nennen den Grund (Ziffern, Versalien, Apostroph-Elision, Fremdwörter). Solche Fälle entscheidest du durch lautes Skandieren – das Skript entscheidet sie bewusst nicht. Wiederkehrende Sonderwörter (Namen, Fremdwörter) kannst du in ein Korrekturlexikon schreiben (`ausnahmen.txt` mit Zeilen wie `Queue=1`) und mit `--lexikon ausnahmen.txt` mitgeben. Ungleiche Verse angleichen: Fehlende Silben mit sinnvollen Füllwörtern schließen – Wie-Wörter (Adjektive) verschönern, Tuwörter (Verben) bringen Aktion. Sinnleere Flickwörter („ja", „doch", „halt") sind ein Notbehelf und fallen auf. Hinweis: Ein Muster aus regelmäßig wechselnden Zeilenlängen (z. B. 8/7/8/7) ist ebenfalls ein gültiges Versmaß – entscheidend ist die Regelmäßigkeit über alle Strophen.
 
-**b) Betonungen skandieren** – das kann kein Skript, das musst du selbst tun. Schreibe jede Zeile aus und markiere jede Silbe als betont (′) oder unbetont (x), Wort für Wort, wie man die Zeile natürlich sprechen würde. Beispiel:
+**b) Betonungen skandieren** – das mitgelieferte Skript prüft keine Betonungen; prüfe sie selbst. Schreibe jede Zeile aus und markiere jede Silbe als betont (′) oder unbetont (x), Wort für Wort, wie man die Zeile natürlich sprechen würde. Beispiel:
 ```
 kommt WAS-ser da-RÜ-ber es ZISCHT   → x ′ x x ′ x x ′
 ```
@@ -99,7 +103,7 @@ Gib das fertige Gedicht aus und nenne knapp die Form, z. B.: „Kreuzreim, 4-heb
 ## B. Ein Gedicht analysieren
 
 Bei der Analyse eines bestehenden Gedichts (oder zur Fehlersuche in eigenen Entwürfen) untersuche der Reihe nach und belege jeden Befund am Text:
-1. **Silben pro Vers** mit `scripts/silben.py`
+1. **Silben pro Vers** mit `scripts/silben.py`; Pfadauflösung und gekennzeichnete manuelle Prüfung wie in Schritt A.5.a
 2. **Betonungen** Zeile für Zeile skandieren → Versfuß benennen (Jambus, Trochäus, Daktylus, Anapäst; references/metrik.md), Auftakt und Zäsuren erwähnen, wo auffällig
 3. **Kadenzen** je Vers: männlich (m), weiblich (w) oder reich
 4. **Reimschema** mit Buchstaben notieren; Kompaktnotation je Vers wie `A11w` (Reim A, 11 Silben, weiblich); jeden Reim als Stufe 1, Stufe 2 oder unzulässig einordnen

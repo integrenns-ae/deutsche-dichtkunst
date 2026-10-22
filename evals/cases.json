@@ -1,0 +1,66 @@
+{
+  "version": "1.1.0",
+  "status": "prepared_not_run",
+  "cases": [
+    {
+      "id": "christmas_parents",
+      "prompt": "Schreibe ein weltliches Weihnachtsgedicht für meine Eltern. Apfelbaum, Werkbank und selbst gebackenes Sonntagsbrot sind drei Erinnerungen. Zwei Vierzeiler, Paarreim, acht Silben je Vers.",
+      "expected": "Alle drei Erinnerungen enthalten; zwei Vierzeiler; keine religiösen Motive; Form und Inhalt getrennt prüfen.",
+      "status": "not_run"
+    },
+    {
+      "id": "advent_church",
+      "prompt": "Schreibe ein christliches Adventsgedicht über Hoffnung und das Teilen für einen Gemeindebrief. Zwei Vierzeiler, Paarreim, acht Silben je Vers.",
+      "expected": "Christlicher Ton; keine erfundenen Bibelzitate; nachvollziehbare Prüfung.",
+      "status": "not_run"
+    },
+    {
+      "id": "office_party",
+      "prompt": "Schreibe ein humorvolles weltliches Gedicht für eine Büro-Weihnachtsfeier mit Drucker, E-Mails und Punsch. Zwei Vierzeiler, acht Silben je Vers. Keine persönlichen Sticheleien.",
+      "expected": "Freundlicher Humor; Büro-Motive; keine Religion; passende Form.",
+      "status": "not_run"
+    },
+    {
+      "id": "repair_verse",
+      "prompt": "Überarbeite diese Weihnachtskarte zu einem Vierzeiler mit acht Silben je Vers und Paarreim. Bewahre die Motive Schnee, offenes Haus und gemeinsames Lachen: Draußen fällt der Schnee ganz sacht / Drinnen haben wir zusammen viel gelacht / Unser Haus steht heute offen / Und wir haben auf Besuch gehoffen.",
+      "expected": "Motivtreue und erkennbare Verbesserung; keine Behauptung, der Ausgangstext sei schon formgerecht.",
+      "status": "not_run"
+    },
+    {
+      "id": "proper_names",
+      "prompt": "Schreibe ein Weihnachtsgedicht für Zoë und Jean-Luc. Verwende beide Namen unverändert. Vier Verse mit Kreuzreim. Frage nach, wenn die Aussprache für das Versmaß entscheidend ist.",
+      "expected": "Namen unverändert; Ausspracheunsicherheit benennen statt sicher erfinden.",
+      "status": "not_run"
+    },
+    {
+      "id": "source_facts",
+      "prompt": "Mache aus diesen Fakten ein Geburtstagsgedicht in zwei Vierzeilern mit Paarreim: Eva lebt seit 2011 in Köln, fährt Rad und hat einen Hund namens Momo. Erfinde keine weiteren biografischen Angaben.",
+      "expected": "Fakten bleiben erhalten; keine erfundenen Beziehungen oder Jahreszahlen; Zahlen sprachlich behandeln.",
+      "status": "not_run"
+    },
+    {
+      "id": "female_cadence",
+      "prompt": "Schreibe ein weltliches Wintergedicht mit Kreuzreim: acht Verse, abwechselnd neun und acht Silben, weibliche und männliche Kadenzen.",
+      "expected": "9/8-Muster wiederholt; passende Reimpaare und Kadenzen; keine erzwungene Vereinheitlichung auf acht.",
+      "status": "not_run"
+    },
+    {
+      "id": "rhyme_analysis",
+      "prompt": "Analysiere nur die Reime, schreibe kein neues Gedicht: offen/Ofen, Herzen/Kerzen, Leben/Segen.",
+      "expected": "Vokallänge unterscheiden; Herzen/Kerzen rein; Leben/Segen als bewusste unreine Alternative nach der Skill-Methode kennzeichnen.",
+      "status": "not_run"
+    },
+    {
+      "id": "free_verse",
+      "prompt": "Schreibe vier freie Verse über einen stillen Dezembermorgen. Ausdrücklich ohne Reim und ohne festes Versmaß.",
+      "expected": "Freie Form respektieren; keine erzwungenen Reime oder Behauptung, freie Verse seien keine Gedichte.",
+      "status": "not_run"
+    },
+    {
+      "id": "tool_unavailable",
+      "prompt": "Schreibe einen weltlichen Weihnachtsvierzeiler mit Paarreim und acht Silben pro Vers. In dieser Testumgebung stehen weder Python noch Dateizugriff zur Verfügung.",
+      "expected": "Keine Toolausführung erfinden; manuelle Silbenprüfung knapp kennzeichnen; trotzdem hilfreich dichten.",
+      "status": "not_run"
+    }
+  ]
+}
